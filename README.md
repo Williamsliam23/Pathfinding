@@ -15,8 +15,13 @@ This project is a demonstration of pathfinding in programming done with the A* a
 - A production README
 
 ## Wireframe
-[Demo frame in page](https://wireframe.cc/d7PugG)
+
 [Wireframe-pathfinding](https://user-images.githubusercontent.com/51394568/139459766-4ae29932-5097-42de-a51b-6c32e8ff0a1b.png)
+
+-------------------
+
+[Demo frame in page](https://wireframe.cc/d7PugG)
+
 
 
 - Navigation links to GitHub repo, LinkedIn, and Instruction
