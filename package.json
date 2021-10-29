@@ -1,0 +1,39 @@
+{
+  "name": "pathfinding",
+  "version": "1.0.0",
+  "description": "This project is a demonstration of pathfinding in programming done with the A* algorithm. The A* algorithm searches through simple node traversal to find the shortest available path to its target destination. A* will be demonstrated with visual navigation through mazes showing how the search determines where it goes as the algorithm progresses, and how it arrives at its final path.",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Williamsliam23/Pathfinding.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Williamsliam23/Pathfinding/issues"
+  },
+  "homepage": "https://github.com/Williamsliam23/Pathfinding#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.19.0",
+    "css-loader": "^6.5.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "webpack": "^5.61.0"
+  }
+}
