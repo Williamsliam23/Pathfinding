@@ -7,6 +7,7 @@
     "defaults"
   ],
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
   },
@@ -21,9 +22,6 @@
     "url": "https://github.com/Williamsliam23/Pathfinding/issues"
   },
   "homepage": "https://github.com/Williamsliam23/Pathfinding#readme",
-  "devDependencies": {
-    "webpack-cli": "^4.9.1"
-  },
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
@@ -34,6 +32,7 @@
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
-    "webpack": "^5.61.0"
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
   }
 }

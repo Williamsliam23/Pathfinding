@@ -1,3 +1,5 @@
+// webpack.config.js
+
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -11,8 +13,7 @@ const config = {
     filename: '[name].js',
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/, // applies to js files
         use: ['babel-loader'], // transpiles your js
         exclude: /node_modules/, // don't transpile node modules
@@ -23,7 +24,9 @@ const config = {
           MiniCssExtractPlugin.loader, // create bundled css file
           {
             loader: 'css-loader', // resolves @import statements
-            options: { url: false } // don't resolve url() statements
+            options: {
+              url: false
+            } // don't resolve url() statements
           },
           'sass-loader', // compiles sass to css
         ]
