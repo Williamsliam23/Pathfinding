@@ -1,9 +1,9 @@
-// import { default as PathNode } from "./node";
+import { default as PathNode } from "./node";
 
 class PathCanvas {
-  constructor(x, y) {
-    // this.el = el;
-    // this.ctx = el.getContext('2d');
+  constructor(el, x, y) {
+    this.el = el;
+    this.ctx = el.getContext('2d');
     this.grid = this.createGrid(x, y);
   }
   createGrid (x, y) {
@@ -17,6 +17,20 @@ class PathCanvas {
     }
     this.setAdjacence(grid, x, y)
     return grid
+  }
+
+  drawGrid() {
+    for (let xAxis = 0; xAxis < 601; xAxis += 30) {
+      this.ctx.moveTo(xAxis, 0);
+      this.ctx.lineTo(xAxis, 600);
+      this.ctx.stroke();
+    }
+    for (let yAxis = 0; yAxis < 601; yAxis += 30) {
+      this.ctx.moveTo(0, yAxis);
+      this.ctx.lineTo(600, yAxis);
+      this.ctx.stroke();
+    }
+    this.ctx.strokeStyle = black;
   }
 
   setAdjacence (grid, x, y) {
