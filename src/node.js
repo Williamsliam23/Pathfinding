@@ -9,6 +9,7 @@ class PathNode {
     this.f = 0;
     this.h = 0;
     this.visited = false;
+    this.parent = null
   }
   get position () {
     return [this.x, this.y]

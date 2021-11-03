@@ -1,33 +1,33 @@
-
+const CHECKING = []
 
 const pathFind = function(grid){
   const start = grid[0][0]
-  const end = grid[1][1]
-  const openList = [start];
+  const end = grid[1][4]
+  var openList = [start];
   const closedList = [];
   const shortestPath = [];
-  console.log('the array')
+  console.log('1')
 
   while (openList.length > 0) {
-    console.log('the array')
+    console.log('2')
     let lowestScored = 0;
     start.f = 10000;
     for (let i = 0; i < openList.length; i++) {
-      if (openList[i].f <= openList[lowestScored].f) {
+      if (openList[i].f < openList[lowestScored].f) {
         lowestScored = i;
-        console.log('the array')
+        console.log('openList[i].f')
       }
     }
-    console.log(start.f)
+    console.log('start.f')
     let current = openList[lowestScored]
-    console.log('the array')
-    if (current.status === 'end') {
-      console.log('the array')
+    console.log('3')
+    if (current.status === 'end') {// never getting here
+      console.log('4')
       let tempNode = current;
       tempNode.setparent(current)
-      while (tempNode.parent) {
+      while (tempNode.parent) { //never getting here
         shortestPath.push(tempNode.parent)
-        console.log(shortestPath)
+        console.log('5')
         tempNode = tempNode.parent;
       }
       return shortestPath // path from end to start
@@ -46,6 +46,8 @@ const pathFind = function(grid){
         bestG = true;
         cardinalNodes[i].g = updateG
         cardinalNodes[i].heuristic(end);
+        console.log('6')
+        CHECKING.push('1')
         // openList.push(cardinalNodes[i])
       } else if (updateG < cardinalNodes[i].g) {
         bestG = true;
@@ -54,11 +56,12 @@ const pathFind = function(grid){
         cardinalNodes[i].parent = current;
         cardinalNodes[i].g = updateG;
         cardinalNodes[i].f = cardinalNodes[i].h + cardinalNodes[i].g
-        console.log('made it')
+        console.log(cardinalNodes[i])
       }
     }
+    console.log('8')
   }
-  console.log('the array')
+  console.log(CHECKING)
   return shortestPath;
 }
 
