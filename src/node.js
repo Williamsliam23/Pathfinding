@@ -24,6 +24,9 @@ class PathNode {
   estimatedCost(previousNode) {
     return this.heuristic + previousNode.g + 1
   }
+  parent(lastNode) {
+    this.parent = lastNode;
+  }
 }
 
 export default PathNode

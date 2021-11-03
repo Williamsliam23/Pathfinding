@@ -13,16 +13,16 @@ class AStar {
 
 
     while (openList.length > 0) {
-      let lowestscore = 0;
-      
-      currentLocation.updateStatus('')
-      let listgrowth = grid[x][y].adjacent
-      for (let i = 0; i < listgrowth.length; i++) {
-        if (listgrowth[i].status === 'valid') {
-          openList.push([listgrowth[i]])
-        } else if (listgrowth[i].status === 'end') {
-
+      let lowestScored = 0;
+      for (let i = 0; i < openList.length; i++) {
+        if (openList[i].estimatedCost() < openList[lowestScored].estimatedCost()) {
+          lowestScored = i;
         }
+      }
+      let current = openList[lowestScored]
+      
+      if (current.status === 'end') {
+        
       }
     }
   }
