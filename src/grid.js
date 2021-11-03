@@ -5,15 +5,17 @@ const layout = function(x, y) {
   for (let i = 0; i < x; i++) {
     const row = [];
     for (let j = 0; j < y; j++) {
-      if (i === 0 && j === 0) {
-        row.push(new PathNode(i, j, 'start'))
-      } else if (i=== x-1 && j === y-1) {
-        row.push(new PathNode(i, j, 'end'))
-      } else {
-        row.push(new PathNode(i, j))
-      }
+      // if (i === 0 && j === 0) {
+        row.push(new PathNode(i, j))  
+          // row.push(new PathNode(i, j, 'start'))
+        // } else if (i === x-1 && j === y-1) {
+          // row.push(new PathNode(i, j, 'end'))
+        // } else {
+          // row.push(new PathNode(i, j))
+        // }
     }
     grid.push(row)
+    console.log(grid)
   }
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < y; j++) {
@@ -32,12 +34,19 @@ const layout = function(x, y) {
       }
     }
   }
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      let num1 = Math.abs ((3) - i)
+      let num2 = Math.abs ((3) - j)
+      grid[i][j].h = num1 + num2
+    }
+  }
   return grid
 } 
 
 
 
-
+export default layout
 
 
 
@@ -91,4 +100,4 @@ const layout = function(x, y) {
 //   }
 // }
 
-export default layout
+

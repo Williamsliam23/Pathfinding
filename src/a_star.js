@@ -1,67 +1,67 @@
-const CHECKING = []
 
-const pathFind = function(grid){
-  const start = grid[0][0]
-  const end = grid[1][4]
-  var openList = [start];
-  const closedList = [];
-  const shortestPath = [];
-  console.log('1')
+
+const pathFind = function(grid, start, end){
+  var openList = [];
+  var closedList = [];
+  var shortestPath = [];
+
+  openList.push(start)
 
   while (openList.length > 0) {
-    console.log('2')
+
     let lowestScored = 0;
-    start.f = 10000;
+
     for (let i = 0; i < openList.length; i++) {
+
       if (openList[i].f < openList[lowestScored].f) {
         lowestScored = i;
-        console.log('openList[i].f')
       }
     }
-    console.log('start.f')
+
     let current = openList[lowestScored]
-    console.log('3')
-    if (current.status === 'end') {// never getting here
-      console.log('4')
+
+    if (current.status === 'end') {
       let tempNode = current;
-      tempNode.setparent(current)
-      while (tempNode.parent) { //never getting here
+
+      shortestPath.push(end) //include end point in path
+
+      while (tempNode.parent) {
         shortestPath.push(tempNode.parent)
-        console.log('5')
         tempNode = tempNode.parent;
       }
+
       return shortestPath // path from end to start
     }
+
     openList.splice(lowestScored, 1);
     closedList.push(current)
+
     let cardinalNodes = current.adjacent;
+
     for (let i = 0; i < cardinalNodes.length; i++) {
+
       let check = cardinalNodes[i]
+
       if (closedList.includes(check) || check.status === 'wall') {
         continue;
       }
       let updateG = current.g + 1;
       let bestG = false;
-      if (!cardinalNodes[i].visited) {
+      if (check.visited === false) {
         bestG = true;
-        cardinalNodes[i].g = updateG
-        cardinalNodes[i].heuristic(end);
-        console.log('6')
-        CHECKING.push('1')
-        // openList.push(cardinalNodes[i])
-      } else if (updateG < cardinalNodes[i].g) {
+        check.g = updateG
+        check.visited = true;
+        openList.push(check)
+      } else if (updateG < check.g) {
         bestG = true;
       }
       if (bestG) {
-        cardinalNodes[i].parent = current;
-        cardinalNodes[i].g = updateG;
-        cardinalNodes[i].f = cardinalNodes[i].h + cardinalNodes[i].g
-        console.log(cardinalNodes[i])
+        check.setparent(current);
+        check.g = updateG;
+        check.f = check.h + check.g
       }
     }
-    console.log('8')
   }
-  console.log(CHECKING)
   return shortestPath;
 }
 
@@ -100,7 +100,7 @@ const pathFind = function(grid){
 //       closedList.push(current)
 //       cardnialNodes = current.adjacent;
 //       for (let i = 0; i < cardinalNodes.length; i++) {
-//         let check =cardinalNodes[i]
+//         let check =check
 //         if (closedList.includes(check) || check.status === 'wall') {
 //           continue;
 //         }
