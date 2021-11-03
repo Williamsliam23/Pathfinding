@@ -1,11 +1,10 @@
-import { default as Grid } from "./grid";
-
 
 class PathCanvas {
   constructor(el, grid) {
+    this.grid = grid;
     this.el = el;
-    this.x = grid.x;
-    this.y = grid.y;
+    this.x = grid.length;
+    this.y = grid.length;
     this.ctx = el.getContext('2d');
   }
   numXLines () {

@@ -6,6 +6,9 @@ class PathNode {
     this.status = status
     this.adjacent = []
     this.g = 0;
+    this.f = 0;
+    this.h = 0;
+    this.visited = false;
   }
   get position () {
     return [this.x, this.y]
@@ -19,12 +22,9 @@ class PathNode {
   heuristic(endNode) {
     let num1 = this.x - endNode.x
     let num2 = this.y - endNode.y
-    return Math.abs(num1 + num2)
+    this.h = Math.abs(num1 + num2)
   }
-  estimatedCost(previousNode) {
-    return this.heuristic + previousNode.g + 1
-  }
-  parent(lastNode) {
+  setparent(lastNode) {
     this.parent = lastNode;
   }
 }
