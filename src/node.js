@@ -1,8 +1,9 @@
 
 class PathNode {
-  constructor (xPosition, yPosition) {
+  constructor (xPosition, yPosition, status='valid') {
     this.x = xPosition
     this.y = yPosition
+    this.status = status
     this.adjacent = []
   }
   get position () {
@@ -10,11 +11,6 @@ class PathNode {
   }
   addAdjacent(node) {
     this.adjacent.push(node)
-  }
-  printNode() {
-    let st = '';
-    for(let i = 0; i < this.adjacent.length; i++) {st += '(' + this.adjacent[i].position + ') '}
-    console.log(`x: ${this.x}, y: ${this.y}, adjacent: ${st}`)
   }
 }
 
