@@ -20,12 +20,39 @@
     <p id='info'><b>About</b><br><br>A* is a graph traversal and path searching algorithm that was developed in the 1960's.
     The algorithm is created in a best first search way, weighing the movement of traversal from the beginning node
   to the ending node following a f(n) = g(n) + h(n) formula; n being the next node. 'g' is the constant cost for movement
-in this example being used as 1 for 2-D and non diagonal traversal, but can be varied with diagonal and 3-D movement. </p>
+in this example being used as 1 for 2-D and non diagonal traversal, but can be varied with diagonal and 3-D movement. 'h' is the heuristic function to create an approximate distance of the node's
+position to the end point, there are many different variations for the heuristic. 'f' is the final addition of the two that is used to determine the node with
+ the lowest movement cost to find heirachy in a queue. For more information check out these links below: <br><br>&emsp;&emsp;&emsp; <a href='https://en.wikipedia.org/wiki/A*_search_algorithm'>Wiki</a>&emsp;&emsp;<a href="https://www.geeksforgeeks.org/a-search-algorithm/">Geeks</a></p>
     <canvas class ='flex-box' id='canvas' width='600', height='600'></canvas>
     <!-- <div class='flex-box' id='spacer'></div> -->
-    <article class='flex-box' id='psuedo'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt volutpat mi, nec commodo quam mattis sed. Cras sed dui iaculis, scelerisque justo et, rutrum nisl. In congue urna suscipit consequat egestas. Curabitur eleifend dolor id nulla auctor varius. Morbi rutrum mi quis risus egestas, et condimentum purus dapibus. Morbi ultrices magna nec porttitor faucibus. Donec egestas est orci, eu vulputate dui sagittis in. Vivamus pellentesque, quam sed ornare feugiat, magna magna vulputate est, in tempor arcu metus vitae ante. Maecenas feugiat dolor dui, at ultrices lorem accumsan ut. Proin at aliquam sapien, a blandit sem. Nullam imperdiet elit cursus diam finibus, sit amet placerat lorem rutrum. Ut nec vehicula ex. In lorem augue, commodo sed libero id, viverra posuere nisl.
-
-      Ut ut suscipit risus. Phasellus vitae tortor et turpis suscipit ultricies. Donec fringilla id quam vitae fringilla. Curabitur et sapien in orci auctor accumsan sit amet id massa. Suspendisse eget posuere dolor. Curabitur dapibus orci quis ornare imperdiet. Nunc volutpat elementum sapien, a venenatis mauris imperdiet nec. Sed mattis sed nisl eu semper.</article>
+    <div class='flex-box' id='psuedo'>
+      <ul>Pseudo-code
+        <li>function pathfinder</li>          
+        <li><span>// lists to be composed of nodes</span></li>
+        <li>&emsp;var openspotlist: [start]</li>
+        <li>&emsp;closedspotlist: []</li> 
+        <li>&emsp;finalpath: []</li>
+        <li>while openspotlist has nodes</li>
+        <li>for nodes in openspotlist: select lowest f score</li>
+        <li>if (end of path)</li>
+        <li><span>// using parent for traceback</span></li>
+        <li>&emsp;while(parent)</li>
+        <li>&emsp;finalpath.push(parent</li>
+        <li>&emsp;return finalpath</li>
+        <li>openspotlist.slice(node)</li>
+        <li>for adjacent spaces of node</li>
+        <li>&emsp;if in(closedspotlist) || obstacle</li>
+        <li>&emsp;skip;</li>
+        <li>&emsp;if !alreadyVisited</li>
+        <li>&emsp;openspotlist.push(node)</li>
+        <li>&emsp;parent node = prev node</li>
+        <li>&emsp;f = g + h</li>
+        <li></li>
+        <li>return -1 <span>//no path</span></li>
+          
+        
+      </ul>
+    </div>
   </div>
   <div class='flex-box' id='controls'>
     <button id='begin'>Pathfind!</button>
