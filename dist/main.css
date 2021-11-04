@@ -1,3 +1,62 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
+* {
+  font-family: Oxygen;
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+  /* border-color: hotpink;
+  border-radius: 5px;
+  border-style: solid; */
+}
+
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
+  \****************************************************************************************************/
+body {
+  background-color: lightgray;
+}
+
+.flex-box {
+  display: flex;
+}
+
+img {
+  width: 50px;
+}
+#info, #psuedo {
+  width: 20%;
+  box-shadow: 5px 5px 5px black;
+  background-color: whitesmoke;
+}
+
+#nav-bar {
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  gap: 30%;
+}
+
+#path-holder {
+  justify-content: center;
+  gap: 20%;
+  align-items: center;
+}
+
+#controls {
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+button {
+  width: 75px;
+  height: 25px;
+  margin: 25px;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

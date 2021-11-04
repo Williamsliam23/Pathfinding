@@ -1,9 +1,9 @@
 
 
 const pathFind = function(grid, start, end){
-  var openList = [];
-  var closedList = [];
-  var shortestPath = [];
+  const openList = [];
+  const closedList = [];
+  const shortestPath = [];
 
   openList.push(start)
 
@@ -21,6 +21,7 @@ const pathFind = function(grid, start, end){
     let current = openList[lowestScored]
 
     if (current.status === 'end') {
+      
       let tempNode = current;
 
       shortestPath.push(end) //include end point in path
@@ -30,7 +31,7 @@ const pathFind = function(grid, start, end){
         tempNode = tempNode.parent;
       }
 
-      return shortestPath // path from end to start
+      return shortestPath.reverse(); // path from start to end
     }
 
     openList.splice(lowestScored, 1);
@@ -67,53 +68,6 @@ const pathFind = function(grid, start, end){
 
 
 
-// class AStar {
-//   constructor (grid) {
-//     this.findPath(grid)
-//   }
-//   findPath() {
-//     const start = [0, 0]
-//     const ending = [grid.x][grid.y];
-//     const openList = [grid[0][0]];
-//     const closedList = [];
-//     const shortestPath = [];
 
-
-//     while (openList.length > 0) {
-//       let lowestScored = 0;
-//       for (let i = 0; i < openList.length; i++) {
-//         if (openList[i].f < openList[lowestScored].f) {
-//           lowestScored = i;
-//         }
-//       }
-//       let current = openList[lowestScored]
-      
-//       if (current.status === 'end') {
-//         let tempNode = current;
-//         while (tempNode.parent) {
-//           shortestPath.push(tempNode.parent)
-//           tempNode = tempNode.parent;
-//         }
-//         return shortestPath // path from end to start
-//       }
-//       openList.splice(lowestScored);
-//       closedList.push(current)
-//       cardnialNodes = current.adjacent;
-//       for (let i = 0; i < cardinalNodes.length; i++) {
-//         let check =check
-//         if (closedList.includes(check) || check.status === 'wall') {
-//           continue;
-//         }
-//         if (cardnialNodes[i].status === 'valid') {
-//           cardnialNodes.g = current.g + 1;
-//           cardnialNodes.heuristic(ending);
-//           cardnialNodes.estimatedCost();
-
-//         }
-//       }
-//     }
-//     return shortestPath;
-//   }
-// }
 
 export default pathFind

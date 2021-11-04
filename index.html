@@ -9,7 +9,27 @@
   <title>Pathfinding</title>
 </head>
 <body>
-  <canvas id='canvas' width='600', height='600'></canvas>
-  <!-- <div id='path-holder'></div> -->
+  <nav class='flex-box' id='nav-bar'>
+    <h1>A* Pathfinding Visualization</h1>
+    <div>
+      <a href="https://github.com/Williamsliam23"><img src='./src/assests/img/Octocat.png'></a>
+      <a href="https://www.linkedin.com/in/liam-williams-76035613a/"><img src=./src/assests/img/LI-In-Bug.png></a>
+    </div>
+  </nav>
+  <div class='flex-box' id='path-holder'>
+    <p id='info'><b>About</b><br><br>A* is a graph traversal and path searching algorithm that was developed in the 1960's.
+    The algorithm is created in a best first search way, weighing the movement of traversal from the beginning node
+  to the ending node following a f(n) = g(n) + h(n) formula; n being the next node. 'g' is the constant cost for movement
+in this example being used as 1 for 2-D and non diagonal traversal, but can be varied with diagonal and 3-D movement. </p>
+    <canvas class ='flex-box' id='canvas' width='600', height='600'></canvas>
+    <!-- <div class='flex-box' id='spacer'></div> -->
+    <article class='flex-box' id='psuedo'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt volutpat mi, nec commodo quam mattis sed. Cras sed dui iaculis, scelerisque justo et, rutrum nisl. In congue urna suscipit consequat egestas. Curabitur eleifend dolor id nulla auctor varius. Morbi rutrum mi quis risus egestas, et condimentum purus dapibus. Morbi ultrices magna nec porttitor faucibus. Donec egestas est orci, eu vulputate dui sagittis in. Vivamus pellentesque, quam sed ornare feugiat, magna magna vulputate est, in tempor arcu metus vitae ante. Maecenas feugiat dolor dui, at ultrices lorem accumsan ut. Proin at aliquam sapien, a blandit sem. Nullam imperdiet elit cursus diam finibus, sit amet placerat lorem rutrum. Ut nec vehicula ex. In lorem augue, commodo sed libero id, viverra posuere nisl.
+
+      Ut ut suscipit risus. Phasellus vitae tortor et turpis suscipit ultricies. Donec fringilla id quam vitae fringilla. Curabitur et sapien in orci auctor accumsan sit amet id massa. Suspendisse eget posuere dolor. Curabitur dapibus orci quis ornare imperdiet. Nunc volutpat elementum sapien, a venenatis mauris imperdiet nec. Sed mattis sed nisl eu semper.</article>
+  </div>
+  <div class='flex-box' id='controls'>
+    <button id='begin'>Pathfind!</button>
+    <button id='reset'>Reset</button>
+  </div>
 </body>
 </html>
