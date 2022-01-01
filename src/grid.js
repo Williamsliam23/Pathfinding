@@ -40,13 +40,13 @@ const layout = function(x, y) {
       grid[i][j].h = num1 + num2
     }
   }
-  for (let i = 0; i < x; i++) {
+  for (let i = 0; i < 100; i++) {
     let num1 = Math.floor(Math.random() * x)
     let num2 = Math.floor(Math.random() * y)
     if (num1 + num2 === 0 ) {
       continue;
     }
-    if (num1 === 20 && num2 === 10) {
+    if (num1 === 19 && num2 === 19) {
       continue;
     }
     grid[num1][num2].status = 'wall'

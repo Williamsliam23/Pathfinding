@@ -13,31 +13,43 @@ window.addEventListener('DOMContentLoaded', () => {
   const startButton = document.getElementById('begin')
   let grid;
   grid = layout(x, y)
-  let test = new PathCanvas (can, grid);
   let start = grid[0][0]
   let end = grid[x-1][y-1]
-  // function init() {
-  //   grid = layout(x,y);
-  //   start = grid[0][0]
-  //   end = grid[19][19]
-  //   test = new PathCanvas(can, grid)
-  //   test.drawGrid()
-  // }
-// window.addEventListener('DOMContentLoaded', () => {
-  // init();
-  // resetButton.addEventListener("click", ()=> {
-  //   ctx.clearRect(0,0,el.height,el.width)
-  //   grid = layout(x,y)
-  // })
-  
+  let test = new PathCanvas (can, grid);
+  test.drawGrid()
+
+
   startButton.addEventListener("click", () => {
-    document.location.reload(true)
+    startButton.disabled = true
+    resetButton.disabled = true
+    grid = null
+    grid = layout(x, y)
+    start = grid[0][0]
+    end = grid[x-1][y-1]
+    pathed.canvasPath(can, x, y, grid)
+    test = null
+    test = new PathCanvas (can, grid)
+    pathed.canvasPath(can, x, y, grid)
+    test.drawGrid
+    ctx.clearRect(0, 0, 600, 600)
+    pathed.colorStart(can, x, y, grid)
+    pathed.canvasPath(can, x, y, grid)
+    const res = path(grid, start, end, can, x, y); 
+    test.drawGrid()
+    pathed.colorStart(can, x, y, grid)
+    setTimeout(()=> {startButton.disabled = false,
+      resetButton.disabled = false}, 3000)
+    
   })
-  const res = path(grid, start, end);
+  
+  resetButton.addEventListener("click", () => {
+    goBack()
+    function goBack() {pathed.path([], x, y, can, [])
+    ctx.clearRect(0, 0, 600, 600)
+    test.drawGrid()}
+  })
 
 
-  pathed.canvasPath(can, x, y, grid, res);
-  pathed.finalPath(can, x, y, grid, res)
 
   test.drawGrid()
 })

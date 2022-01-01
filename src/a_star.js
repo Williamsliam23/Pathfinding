@@ -1,6 +1,7 @@
+import { colorNode, finalPath, path } from "./pathing";
 
-
-const pathFind = function(grid, start, end){
+const pathFind = function(grid, start, end, can, x, y){
+  const visitedList = []
   const openList = [];
   const closedList = [];
   const shortestPath = [];
@@ -21,7 +22,6 @@ const pathFind = function(grid, start, end){
     let current = openList[lowestScored]
 
     if (current.status === 'end') {
-      
       let tempNode = current;
 
       shortestPath.push(end) //include end point in path
@@ -30,8 +30,8 @@ const pathFind = function(grid, start, end){
         shortestPath.push(tempNode.parent)
         tempNode = tempNode.parent;
       }
-
-      return shortestPath.reverse(); // path from start to end
+      path(visitedList.reverse(), x, y, can, shortestPath.reverse())
+      return shortestPath.reverse() // path from start to end
     }
 
     openList.splice(lowestScored, 1);
@@ -53,6 +53,7 @@ const pathFind = function(grid, start, end){
         check.g = updateG
         check.visited = true;
         openList.push(check)
+        visitedList.push(check)
       } else if (updateG < check.g) {
         bestG = true;
       }
@@ -63,6 +64,7 @@ const pathFind = function(grid, start, end){
       }
     }
   }
+  path(visitedList.reverse(), x, y, can, shortestPath.reverse())
   return shortestPath;
 }
 

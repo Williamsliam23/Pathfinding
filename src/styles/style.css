@@ -3,8 +3,13 @@ body {
 
 }
 
+#canvas {
+  background: white;
+}
+
 .flex-box {
   display: flex;
+  z-index: 0;
 }
 
 img {
