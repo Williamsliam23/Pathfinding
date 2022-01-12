@@ -2,6 +2,9 @@
 
 This project is a demonstration of pathfinding in programming done with the A* algorithm. The A* algorithm searches through simple node traversal to find the shortest available path to its target destination. A* will be demonstrated with visual navigation through mazes showing how the search determines where it goes as the algorithm progresses, and how it arrives at its final path.
 
+## Hosted:
+https://williamsliam23.github.io/Pathfinding/
+
 ## In Pathfinding, users will be able to:
 
 - Choose from preset initial mazes for traversal
