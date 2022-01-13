@@ -9,54 +9,63 @@
   <title>Pathfinding</title>
 </head>
 <body>
+  <div class='page-container'>
   <nav class='flex-box' id='nav-bar'>
     <h1>A* Pathfinding Visualization</h1>
     <div>
-      <a href="https://github.com/Williamsliam23"><img src='./src/assests/img/Octocat.png'></a>
-      <a href="https://www.linkedin.com/in/liam-williams-76035613a/"><img src=./src/assests/img/LI-In-Bug.png></a>
+      <a href="https://github.com/Williamsliam23" target="_blank" rel="noopener noreferrer"><img src='./src/assests/img/Octocat.png'></a>
+      <a href="https://www.linkedin.com/in/liam-williams-76035613a/" target="_blank" rel="noopener noreferrer"><img src=./src/assests/img/LI-In-Bug.png></a>
     </div>
   </nav>
+  <div class='flex-box' id='text-area'>
   <div class='flex-box' id='path-holder'>
     <p id='info'><b>About</b><br><br>A* is a graph traversal and path searching algorithm that was developed in the 1960's.
     The algorithm is created in a best first search way, weighing the movement of traversal from the beginning node
   to the ending node following a f(n) = g(n) + h(n) formula; n being the next node. 'g' is the constant cost for movement
 in this example being used as 1 for 2-D and non diagonal traversal, but can be varied with diagonal and 3-D movement. 'h' is the heuristic function to create an approximate distance of the node's
 position to the end point, there are many different variations for the heuristic. 'f' is the final addition of the two that is used to determine the node with
- the lowest movement cost to find heirachy in a queue. For more information check out these links below: <br><br>&emsp;&emsp;&emsp; <a href='https://en.wikipedia.org/wiki/A*_search_algorithm'>Wiki</a>&emsp;&emsp;<a href="https://www.geeksforgeeks.org/a-search-algorithm/">Geeks</a></p>
-    <canvas class ='flex-box' id='canvas' width='600', height='600'></canvas>
-    <!-- <div class='flex-box' id='spacer'></div> -->
-    <div class='flex-box' id='psuedo'>
-      <ul>Pseudo-code
-        <li>function pathfinder</li>          
-        <li><span>// lists to be composed of nodes</span></li>
-        <li>&emsp;var openspotlist: [start]</li>
-        <li>&emsp;closedspotlist: []</li> 
-        <li>&emsp;finalpath: []</li>
-        <li>while openspotlist has nodes</li>
-        <li>for nodes in openspotlist: select lowest f score</li>
-        <li>if (end of path)</li>
-        <li><span>// using parent for traceback</span></li>
-        <li>&emsp;while(parent)</li>
-        <li>&emsp;finalpath.push(parent</li>
-        <li>&emsp;return finalpath</li>
-        <li>openspotlist.slice(node)</li>
-        <li>for adjacent spaces of node</li>
-        <li>&emsp;if in(closedspotlist) || obstacle</li>
-        <li>&emsp;skip;</li>
-        <li>&emsp;if !alreadyVisited</li>
-        <li>&emsp;openspotlist.push(node)</li>
-        <li>&emsp;parent node = prev node</li>
-        <li>&emsp;f = g + h</li>
-        <li></li>
-        <li>return -1 <span>//no path</span></li>
-          
-        
-      </ul>
-    </div>
+the lowest movement cost to find heirachy in a queue. For more information check out these links below: 
+<div class='flex-box'><a href='https://en.wikipedia.org/wiki/A*_search_algorithm' target="_blank" rel="noopener noreferrer">Wiki</a>&emsp;&emsp;<a href="https://www.geeksforgeeks.org/a-search-algorithm/" target="_blank" rel="noopener noreferrer">Geeks</a></div>
+ </div>
+</p>
+ <div class='flex-box' id='psuedo'>
+   <ul>Pseudo-code
+     <li>function pathfinder</li>          
+     <li><span>// lists to be composed of nodes</span></li>
+     <li>&emsp;var openspotlist: [start]</li>
+     <li>&emsp;closedspotlist: []</li> 
+     <li>&emsp;finalpath: []</li>
+     <li>while openspotlist has nodes</li>
+     <li>for nodes in openspotlist: select lowest f score</li>
+     <li>if (end of path)</li>
+     <li><span>// using parent for traceback</span></li>
+     <li>&emsp;while(parent)</li>
+     <li>&emsp;finalpath.push(parent</li>
+     <li>&emsp;return finalpath</li>
+     <li>openspotlist.slice(node)</li>
+     <li>for adjacent spaces of node</li>
+     <li>&emsp;if in(closedspotlist) || obstacle</li>
+     <li>&emsp;skip;</li>
+     <li>&emsp;if !alreadyVisited</li>
+     <li>&emsp;openspotlist.push(node)</li>
+     <li>&emsp;parent node = prev node</li>
+     <li>&emsp;f = g + h</li>
+     <li></li>
+     <li>return -1 <span>//no path</span></li>
+    </ul>
   </div>
-  <div class='flex-box' id='controls'>
+</div>
+</div>
+<div class='flex-box' id='show'>
+  <h3>For a visual presentation of how A* works, press the "Pathfind!" button below!</h3>
+</div>
+<div class='flex-box' id='controls'>
+    <canvas class ='flex-box' id='canvas' width='600', height='600'></canvas>
+    <div>
     <button id='begin'>Pathfind!</button>
     <button id='reset'>Reset</button>
   </div>
+</div>
+</div>
 </body>
 </html>
